@@ -24,6 +24,17 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
+vars:
+    fivetran_log_database: FIVETRAN_DATABASE
+    fivetran_log_schema: FIVETRAN_LOG
+
+vars:
+    fivetran_log_using_transformations: false # this will disable all transformation + trigger_table logic
+    fivetran_log_using_triggers: false # this will disable only trigger_table logic 
+    fivetran_log_using_account_membership: false # this will disable only the account membership logic
+    fivetran_log_using_destination_membership: false # this will disable only the destination membership logic
+    fivetran_log_using_user: false # this will disable only the user logic
+
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
